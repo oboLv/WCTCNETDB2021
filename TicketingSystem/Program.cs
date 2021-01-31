@@ -28,15 +28,16 @@ namespace TicketSystem
                         System.Console.WriteLine(format, arr[0], arr[1], arr[2], arr[3], arr[4], arr[5], arr[6]);
                         System.Console.ReadLine();
                     }
+                    reader.Close();
                 }
                 else if(choice == 2)
                 {
                     int ticketID = 0;
-                    StreamReader sR = new StreamReader(file);
-                    while (!sR.EndOfStream)//get next TicketID number
+                    StreamReader reader = new StreamReader(file);
+                    while (!reader.EndOfStream)//get next TicketID number
                     {
-                        string toArray = sR.ReadLine();
-                        if (sR.EndOfStream)
+                        string toArray = reader.ReadLine();
+                        if (reader.EndOfStream)
                             {
                                 string[] stringArray = toArray.Split(',');
                                 int ticketIDOld = Convert.ToInt32(stringArray[0]);
@@ -54,7 +55,7 @@ namespace TicketSystem
                     string p4 = Console.ReadLine();
                     System.Console.WriteLine("Enter who is assigned to this ticket");
                     string p5 = Console.ReadLine();
-                    string p6 = $"{ticketSubmitter}|{ticketAssigned}|Bill Jones";
+                    string p6 = $"{p4}|{p5}|Bill Jones";
                     string ticketCSV = "{0},{1},{2},{3},{4},{5},{6}";
                     System.Console.WriteLine("Ticket added");
                     System.Console.ReadLine();
