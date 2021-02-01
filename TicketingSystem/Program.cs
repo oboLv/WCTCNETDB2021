@@ -26,8 +26,8 @@ namespace TicketSystem
                         string line = reader.ReadLine();
                         string[] arr = line.Split(',');
                         System.Console.WriteLine(format, arr[0], arr[1], arr[2], arr[3], arr[4], arr[5], arr[6]);
-                        System.Console.ReadLine();
                     }
+                    System.Console.ReadLine();
                     reader.Close();
                 }
                 else if(choice == 2)
