@@ -32,7 +32,7 @@ namespace TicketSystem
                 }
                 else if(choice == 2)
                 {
-                    int ticketID = 0;
+                    int ticketID;
                     StreamReader reader = new StreamReader(file);
                     while (!reader.EndOfStream)//get next TicketID number
                     {
@@ -40,7 +40,7 @@ namespace TicketSystem
                         if (reader.EndOfStream)
                             {
                                 string[] stringArray = toArray.Split(',');
-                                int ticketIDOld = Convert.ToInt32(stringArray[0]);
+                                int tickID = Convert.ToInt32(stringArray[0]);
                                 ticketID = ticketIDOld + 1;
                             }
                     }
