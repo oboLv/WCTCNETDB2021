@@ -17,7 +17,7 @@ namespace TicketSystem
                 System.Console.WriteLine("3) Exit application");
                 var choice = System.Console.ReadLine();
                 
-                if(choice == 1)
+                if(choice == "1")
                 {
                     StreamReader reader = new StreamReader(file);
 
@@ -30,7 +30,7 @@ namespace TicketSystem
                     System.Console.ReadLine();
                     reader.Close();
                 }
-                else if(choice == 2)
+                else if(choice == "2")
                 {
                     int ticketID;
                     StreamReader reader = new StreamReader(file);
@@ -41,7 +41,7 @@ namespace TicketSystem
                             {
                                 string[] stringArray = toArray.Split(',');
                                 int tickID = Convert.ToInt32(stringArray[0]);
-                                ticketID = ticketIDOld + 1;
+                                ticketID = tickID + 1;
                             }
                     }
                     reader.Close();
@@ -69,4 +69,5 @@ namespace TicketSystem
                 }
         }
     }
+}
 }
